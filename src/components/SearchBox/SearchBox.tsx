@@ -10,7 +10,11 @@ import LocationSuggestions from '@/components/SearchBox/LocationSuggestions';
 import { useDebounce } from '@/hooks/useDebounce';
 import { fetchLocation } from '@/utils/fetchLocation';
 
-const SearchBox = () => {
+interface SearchBoxProps {
+  onHide: () => void; // Function to handle hiding the search box
+}
+
+const SearchBox: React.FC<SearchBoxProps> = ({ onHide }) => {
   const [searchText, setSearchText] = useState('');
   const [locations, setLocations] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
@@ -59,7 +63,20 @@ const SearchBox = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-xl font-semibold mb-4 text-center">Search for Locations</h2>
+        {/* Hide Button */}
+        <IconButton
+          onClick={onHide}
+          size="small"
+          className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+          aria-label="Hide Search Box"
+        >
+          <CloseIcon />
+        </IconButton>
+
+        {/* Search Box Content */}
+        <h2 className="text-xl font-semibold mb-4 text-center">
+          Find Your Destination
+        </h2>
         <div className="relative">
           <TextField
             label="Enter Location"

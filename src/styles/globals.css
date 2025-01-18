@@ -1,14 +1,12 @@
-/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* globals.css */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden; /* Prevents scrollbars */
+  overflow-x: hidden;
 }
 
 .overlay {
@@ -17,8 +15,8 @@ body {
     0,
     0,
     0.4
-  ); /* Semi-transparent overlay for readability */
-  backdrop-filter: blur(8px); /* Adds blur effect to the background */
+  );
+  backdrop-filter: blur(8px);
   position: absolute;
   top: 0;
   left: 0;
@@ -35,16 +33,12 @@ body {
   top: 10px;
 }
 
-/* .left-1/2 {
-  left: 50%;
-} */
-
 .transform {
   transform: translateX(-50%);
 }
 
 .max-w-md {
-  max-width: 28rem; /* equivalent to 448px */
+  max-width: 28rem;
 }
 
 .text-xl {
@@ -80,31 +74,30 @@ body {
 }
 
 .max-h-40 {
-  max-height: 10rem; /* 160px */
+  max-height: 10rem;
 }
 
 .overflow-y-auto {
   overflow-y: auto;
 }
 
-.main-content {
+.home-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 130px; /* You can adjust this gap as per requirement */
-  background-image: url('../../public/images/page-bg.jpg'); /* Add your image path here */
-  background-size: cover; /* Ensures the image covers the entire screen */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents tiling */
-  height: 100%; /* Full height */
-  width: 100%; /* Full width */
+  background-image: url('../../public/images/page-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
 
 .search-box-container,
 .property-list-container {
-  width: 100%; /* Ensures full width */
-  max-width: 1200px; /* Adjust based on your design */
+  width: 100%;
+  max-width: 1200px;
 }
 
 .search-box-container {
@@ -112,13 +105,14 @@ body {
 }
 
 .property-list-container {
+  margin-top: 150px;
   padding: 16px;
-  background-image: url('../../public/images/property-list-bg.jpg'); /* Add your image path here */
-  background-size: cover; /* Ensures the image covers the entire screen */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents tiling */
-  height: 50%; /* Full height */
-  width: 100%; /* Full width */
+  background-image: url('../../public/images/property-list-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
 
 .container {
@@ -139,4 +133,8 @@ body {
 
 .hover\:shadow-xl:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.banner-text {
+  margin-inline: -35px
 }

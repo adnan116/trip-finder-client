@@ -1,29 +1,39 @@
-import React from 'react';
-import Header from '@/components/Common/Header'; // Adjust path if necessary
-import PropertyList from '@/components/Property/PropertyList'; // Adjust path if necessary
-import SearchBox from '@/components/SearchBox/SearchBox'; // Adjust path if necessary
+import React, { useState } from 'react';
+import Header from '@/components/Common/Header';
+import Footer from '@/components/Common/Footer';
+import PropertyList from '@/components/Property/PropertyList';
+import SearchBox from '@/components/SearchBox/SearchBox';
 
-const Home = () => {
+const Home: React.FC = () => {
+  const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(true);
+
+  const toggleSearchBox = () => {
+    setIsSearchBoxVisible((prev) => !prev);
+  };
+
   return (
-    <div className="home-container flex flex-col">
+    <div className="home-container flex flex-col items-center">
       {/* Header */}
-      <div className="header-container fixed top-0 w-full z-50">
-        <Header />
+      <Header
+        onToggleSearchBox={toggleSearchBox}
+        isSearchBoxVisible={isSearchBoxVisible}
+      />
+
+      {/* SearchBox */}
+      {isSearchBoxVisible && <SearchBox onHide={toggleSearchBox} />}
+
+      {/* Property List */}
+      <div
+        className="property-list-container px-6 pb-6 bg-cover bg-center flex items-center justify-center"
+        style={{
+          marginTop: '120px',
+        }}
+      >
+        <PropertyList />
       </div>
 
-      {/* Main Content */}
-      <div className="main-content pt-20 flex flex-col items-center space-y-8">
-        {/* Search Box Panel */}
-        <div className="search-box-container w-full p-6">
-          <SearchBox />
-        </div>
-
-        {/* Property List Panel */}
-        <div
-          className="property-list-container w-full px-6 pb-6 bg-cover bg-center flex items-center justify-center">
-          <PropertyList />
-        </div>
-      </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
