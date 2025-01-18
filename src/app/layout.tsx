@@ -4,11 +4,7 @@ import '../styles/globals.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function Layout({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
@@ -21,3 +17,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+export default Layout;

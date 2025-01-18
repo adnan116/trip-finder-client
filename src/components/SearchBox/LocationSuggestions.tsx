@@ -5,7 +5,7 @@ interface LocationSuggestionsProps {
   error: string | null;
 }
 
-export const LocationSuggestions: React.FC<LocationSuggestionsProps> = ({
+const LocationSuggestions: React.FC<LocationSuggestionsProps> = ({
   locations,
   error,
 }) => {
@@ -16,7 +16,7 @@ export const LocationSuggestions: React.FC<LocationSuggestionsProps> = ({
   return (
     <div className="mt-4 max-h-40 overflow-y-auto">
       {locations.length === 0 ? (
-        <p className="text-gray-500">No locations found</p>
+        <p className="text-gray-500 text-center">No locations found</p>
       ) : (
         locations.map((location, index) => (
           <div
@@ -31,3 +31,5 @@ export const LocationSuggestions: React.FC<LocationSuggestionsProps> = ({
     </div>
   );
 };
+
+export default LocationSuggestions;

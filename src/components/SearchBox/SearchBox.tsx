@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import CloseIcon from '@mui/icons-material/Close';
-import { LocationSuggestions } from '@/components/SearchBox/LocationSuggestions';
+import LocationSuggestions from '@/components/SearchBox/LocationSuggestions';
 import { useDebounce } from '@/hooks/useDebounce';
 import { fetchLocation } from '@/utils/fetchLocation';
 
-export const SearchBox = () => {
+const SearchBox = () => {
   const [searchText, setSearchText] = useState('');
   const [locations, setLocations] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
@@ -59,7 +59,7 @@ export const SearchBox = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-xl font-semibold mb-4">Search for Locations</h2>
+        <h2 className="text-xl font-semibold mb-4 text-center">Search for Locations</h2>
         <div className="relative">
           <TextField
             label="Enter Location"
@@ -109,3 +109,5 @@ export const SearchBox = () => {
     </>
   );
 };
+
+export default SearchBox;
