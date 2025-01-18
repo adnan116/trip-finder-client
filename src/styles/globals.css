@@ -10,12 +10,7 @@ body {
 }
 
 .overlay {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.4
-  );
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   position: absolute;
   top: 0;
@@ -136,5 +131,46 @@ body {
 }
 
 .banner-text {
-  margin-inline: -35px
+  margin-inline: -35px;
+}
+
+@media screen and (max-width: 768px) {
+  .home-container {
+    background-size: contain;
+  }
+
+  .property-list-container {
+    margin-top: 100px;
+    padding: 12px;
+  }
+
+  .property-list-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .search-box-container {
+    padding: 12px;
+  }
+}
+
+/* Adjusting for very small screens */
+@media screen and (max-width: 480px) {
+  .property-list-container {
+    margin-top: 80px;
+    padding: 8px;
+  }
+
+  .property-list-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .search-box-container {
+    padding: 8px;
+  }
+
+  .banner-text {
+    font-size: 1.5rem;
+  }
 }

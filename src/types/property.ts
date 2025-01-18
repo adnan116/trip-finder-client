@@ -9,4 +9,6 @@ export type Property = {
   amenities: string[];
   location: string;
   link: string;
+  latitude: number;
+  longitude: number;
 };
